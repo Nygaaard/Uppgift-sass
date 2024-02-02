@@ -1,4 +1,8 @@
 @use "./layout/body.scss";
 @use "./layout/header.scss";
+@use "./layout/footer.scss";
 
-@use "./variables.scss";
+@use "./abstracts/variables.scss";
+@use "./abstracts/typography.scss";
+
+@use "./pages/index.scss";
