@@ -52,19 +52,36 @@
             Denna uppgift är en förlängning av tidigare moment. Jag har tidigare
             använt mig av Gulp men använder till denna uppgift Parcel. Jag
             använder även för första gången Sass istället för vanlig CSS.
+            <br />
+            Jag har gjort det möjligt att anpassa sidan efter dark/light mode.
+            Detta går att kontrollera med knappen nedanför bilden. Då ändras
+            hela utseendet för sidan.
           </p>
         </section>
       </div>
       <div class="flex-container">
-        <picture>
-          <source srcset="./images/sunlight.jpg?as=webp" class="image" />
-          <img src="./images/sunlight.jpg" alt="Soluppgång" class="image" />
+        <picture class="hiddenOne" id="hiddenOne">
+          <source
+            srcset="./images/sun.jpg?as=webp"
+            type="image/webp"
+            class="image"
+          />
+          <img src="./images/sun.jpg" alt="Soluppgång" class="image" />
         </picture>
-        <picture>
-          <source srcset="./images/full-moon.jpg?as=webp" class="image" />
+        <picture class="hiddenTwo" id="hiddenTwo">
+          <source
+            srcset="./images/full-moon.jpg?as=webp"
+            type="image/webp"
+            class="image"
+          />
           <img src="./images/full-moon.jpg" alt="Soluppgång" class="image" />
         </picture>
-        <button class="button" id="button">Ändra tema</button>
+        <button id="buttonMoon">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="buttonSun">
+          <i class="fa-regular fa-sun"></i>
+        </button>
       </div>
     </main>
     <footer>

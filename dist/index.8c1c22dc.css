@@ -15,7 +15,7 @@ body {
 
 header {
   z-index: 1;
-  background-color: #181818;
+  background-color: #184357;
   justify-content: space-between;
   align-items: center;
   min-height: 100px;
@@ -74,7 +74,7 @@ header nav a:active {
   }
 
   .nav-mobile-container {
-    background-color: #333;
+    background-color: #686161;
     width: 40%;
     height: 100vh;
     display: none;
@@ -126,12 +126,50 @@ header nav a:active {
 footer {
   text-align: center;
   color: #fff;
-  background-color: #4b4b4b;
+  background-color: #23627f;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 80px;
   display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root header {
+    background-color: #181818;
+  }
+
+  :root body {
+    background-color: #686161;
+  }
+
+  :root .sec h1, :root p {
+    color: #000;
+  }
+
+  :root footer {
+    background-color: #9b9494;
+  }
+}
+
+.dark-mode header {
+  background-color: #181818;
+}
+
+.dark-mode body {
+  background-color: #686161;
+}
+
+.dark-mode .sec h1, .dark-mode p {
+  color: #fff;
+}
+
+.dark-mode footer {
+  background-color: #9b9494;
+}
+
+.dark-mode .image {
+  border: 5px solid #fff;
 }
 
 p {
@@ -159,8 +197,35 @@ h1 {
 }
 
 .sec h1 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  color: #23627f;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #798b97;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: .9rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+button:active {
+  background-color: #798b97;
+}
+
+.image {
+  border: 5px solid #000;
+  border-radius: 10px;
+  width: 700px;
+  height: auto;
 }
 
 /*# sourceMappingURL=index.8c1c22dc.css.map */

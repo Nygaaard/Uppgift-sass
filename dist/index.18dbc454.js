@@ -580,8 +580,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"1SICI":[function(require,module,exports) {
 var _header = require("./header");
+var _hideImage = require("./hideImage");
 
-},{"./header":"bvS82"}],"bvS82":[function(require,module,exports) {
+},{"./header":"bvS82","./hideImage":"eWnHc"}],"bvS82":[function(require,module,exports) {
 let hamburgerEl = document.getElementById("hamburger");
 let closeEl = document.getElementById("close");
 let navMobileEl = document.getElementById("nav-mobile");
@@ -591,6 +592,46 @@ hamburgerEl.addEventListener("click", function() {
 closeEl.addEventListener("click", function() {
     navMobileEl.style.display = "none";
 });
+
+},{}],"eWnHc":[function(require,module,exports) {
+let buttonMoonEl = document.getElementById("buttonMoon");
+let buttonSunEl = document.getElementById("buttonSun");
+let hiddenOneEl = document.getElementById("hiddenOne");
+let hiddenTwoEl = document.getElementById("hiddenTwo");
+let sortDirection = true;
+let isDarkMode = false;
+hiddenTwoEl.style.display = "none";
+buttonSunEl.style.display = "none";
+buttonMoonEl.addEventListener("click", function() {
+    sortDirection = !sortDirection;
+    hiddenOneEl.style.display = "block";
+    hiddenTwoEl.style.display = "none";
+    buttonSunEl.style.display = "none";
+    buttonMoonEl.style.display = "block";
+    hiddenTwoEl.style.display = "block";
+    hiddenOneEl.style.display = "none";
+    buttonSunEl.style.display = "block";
+    buttonMoonEl.style.display = "none";
+    toggleColorMode();
+});
+buttonSunEl.addEventListener("click", function() {
+    sortDirection = !sortDirection;
+    hiddenOneEl.style.display = "none";
+    hiddenTwoEl.style.display = "block";
+    buttonSunEl.style.display = "block";
+    buttonMoonEl.style.display = "none";
+    hiddenTwoEl.style.display = "none";
+    hiddenOneEl.style.display = "block";
+    buttonSunEl.style.display = "none";
+    buttonMoonEl.style.display = "block";
+    toggleColorMode();
+});
+function toggleColorMode() {
+    const rootElement = document.documentElement;
+    if (isDarkMode) rootElement.classList.remove("dark-mode");
+    else rootElement.classList.add("dark-mode");
+    isDarkMode = !isDarkMode;
+}
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequired2ca")
 

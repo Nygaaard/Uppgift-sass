@@ -1,5 +1,9 @@
 //Colors
 $main-black: #181818;
-$main-grey: #333;
+$main-blue: #184357;
+$light-blue: lighten($main-blue, 10%);
+$main-grey: #686161;
 $main-white: #dacfcf;
-$light-black: lighten($main-black, 20%);
+$light-black: lighten($main-black, 40%);
+$button-color: #798b97;
+$light-grey: lighten($main-grey, 20%);

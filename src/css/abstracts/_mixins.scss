@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-@mixin marginTopBottom {
-  margin-top: 40px;
-  margin-bottom: 20px;
+@mixin marginTopBottom($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
 }

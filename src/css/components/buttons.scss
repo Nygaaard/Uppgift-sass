@@ -1,0 +1,19 @@
+@use "../abstracts/variables.scss";
+@use "../abstracts/mixins";
+
+button {
+  width: 100px;
+  height: 40px;
+  background-color: variables.$button-color;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  @include mixins.marginTopBottom(10px, 10px);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+button:active {
+  background-color: variables.$button-color;
+}

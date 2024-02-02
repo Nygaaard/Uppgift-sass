@@ -1,5 +1,5 @@
 @use "../abstracts/variables.scss";
-@use "../mixins";
+@use "../abstracts/mixins";
 
 .flex-container {
   @include mixins.flexContainer();
@@ -10,5 +10,6 @@
 }
 
 .sec h1 {
-  @include mixins.marginTopBottom();
+  @include mixins.marginTopBottom(60px, 30px);
+  color: variables.$light-blue;
 }

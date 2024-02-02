@@ -1,0 +1,38 @@
+@use "../abstracts/variables.scss";
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    header {
+      background-color: variables.$main-black;
+    }
+    body {
+      background-color: variables.$main-grey;
+    }
+    .sec h1,
+    p {
+      color: #000;
+    }
+    footer {
+      background-color: variables.$light-grey;
+    }
+  }
+}
+
+.dark-mode {
+  header {
+    background-color: variables.$main-black;
+  }
+  body {
+    background-color: variables.$main-grey;
+  }
+  .sec h1,
+  p {
+    color: #fff;
+  }
+  footer {
+    background-color: variables.$light-grey;
+  }
+  .image {
+    border: 5px solid #fff;
+  }
+}
