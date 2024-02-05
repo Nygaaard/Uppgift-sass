@@ -136,7 +136,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
   :root header {
-    background-color: #181818;
+    background-color: #184357;
   }
 
   :root body {
@@ -148,7 +148,7 @@ footer {
   }
 
   :root footer {
-    background-color: #9b9494;
+    background-color: #23627f;
   }
 }
 
@@ -215,6 +215,11 @@ h1 {
 @media (width <= 500px) {
   .sec {
     width: 90%;
+  }
+
+  .flex-container {
+    width: 95%;
+    margin: 0 auto;
   }
 }
 
