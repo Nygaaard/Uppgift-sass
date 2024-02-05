@@ -140,7 +140,7 @@ footer {
   }
 
   :root body {
-    background-color: #686161;
+    background-color: #184357;
   }
 
   :root .sec h1, :root p {
@@ -157,7 +157,7 @@ footer {
 }
 
 .dark-mode body {
-  background-color: #686161;
+  background-color: #184357;
 }
 
 .dark-mode .sec h1, .dark-mode p {
@@ -165,7 +165,7 @@ footer {
 }
 
 .dark-mode footer {
-  background-color: #9b9494;
+  background-color: #4b4b4b;
 }
 
 .dark-mode .image {
@@ -202,13 +202,29 @@ h1 {
   margin-bottom: 30px;
 }
 
+.hiddenOne, .hiddenTwo {
+  overflow: hidden;
+}
+
+@media (width <= 800px) {
+  .sec {
+    width: 70%;
+  }
+}
+
+@media (width <= 500px) {
+  .sec {
+    width: 90%;
+  }
+}
+
 button {
   background-color: #798b97;
   border-radius: 5px;
   width: 100px;
   height: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: .9rem;
 }
 
@@ -225,7 +241,10 @@ button:active {
   border: 5px solid #000;
   border-radius: 10px;
   width: 700px;
+  max-width: 100%;
   height: auto;
+  display: block;
+  position: relative;
 }
 
 /*# sourceMappingURL=index.8c1c22dc.css.map */

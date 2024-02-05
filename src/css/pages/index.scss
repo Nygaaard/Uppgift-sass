@@ -13,3 +13,19 @@
   @include mixins.marginTopBottom(60px, 30px);
   color: variables.$light-blue;
 }
+
+.hiddenOne,
+.hiddenTwo {
+  overflow: hidden;
+}
+
+@media all and (max-width: 800px) {
+  .sec {
+    width: 70%;
+  }
+}
+@media all and (max-width: 500px) {
+  .sec {
+    width: 90%;
+  }
+}
