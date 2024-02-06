@@ -7,6 +7,7 @@
 
 .sec {
   @include mixins.sectionMix();
+  margin-bottom: 40px;
 }
 
 .sec h1 {

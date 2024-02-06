@@ -3,17 +3,17 @@
 @media (prefers-color-scheme: dark) {
   :root {
     header {
-      background-color: variables.$main-blue;
+      background-color: variables.$main-black;
     }
     body {
-      background-color: variables.$main-white;
+      background-color: variables.$main-blue;
     }
     .sec h1,
     p {
-      color: #000;
+      color: #fff;
     }
     footer {
-      background-color: variables.$light-blue;
+      background-color: variables.$main-grey;
     }
   }
 }
