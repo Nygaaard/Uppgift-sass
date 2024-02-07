@@ -23,12 +23,18 @@
   body {
     background-color: variables.$main-blue;
   }
-  .sec h1,
-  p {
+  .sec h1 {
+    color: variables.$main-white;
+  }
+  .sec p {
     color: variables.$main-white;
   }
   footer {
     background-color: variables.$main-grey;
+  }
+  .sass-section,
+  .sass-section-two {
+    background-color: variables.$main-blue;
   }
 }
 
@@ -41,7 +47,11 @@
   }
   .sec h1,
   p {
-    color: #000;
+    @if (prefers-color-scheme(light)) {
+      color: #000;
+    } @else {
+      color: variables.$main-white;
+    }
   }
   footer {
     background-color: variables.$light-blue;

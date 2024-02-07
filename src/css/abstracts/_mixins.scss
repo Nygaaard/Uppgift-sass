@@ -1,3 +1,5 @@
+@use "../abstracts/variables.scss";
+
 @mixin sectionMix() {
   display: flex;
   flex-direction: column;
