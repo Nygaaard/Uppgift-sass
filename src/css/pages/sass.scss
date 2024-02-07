@@ -7,6 +7,7 @@
   margin: 1rem;
   background-color: variables.$main-white;
   width: 40%;
+  border-radius: 5px;
 }
 .sass-section h1,
 .sass-section-two h2 {
@@ -16,7 +17,7 @@
 .sass-section-two {
   @extend .sass-section;
   background-color: variables.$dark-white;
-  margin-bottom: 140px;
+  margin-bottom: 120px;
 }
 .list {
   width: 90%;
@@ -25,6 +26,9 @@
 .non-dot {
   list-style: none;
   font-weight: bold;
+}
+.sass-container {
+  margin-top: 50px;
 }
 
 @media all and (max-width: 1100px) {
