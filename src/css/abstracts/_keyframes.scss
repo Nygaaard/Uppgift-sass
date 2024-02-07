@@ -1,14 +1,29 @@
 @keyframes colorTransition {
   0% {
-    background-color: #181818;
+    background-color: blue;
     left: 0;
   }
+  25% {
+    left: 10px;
+  }
   50% {
-    background-color: #5a5959;
-    left: 40px;
+    background-color: yellow;
+    left: 20px;
+  }
+  75% {
+    left: 10px;
   }
   100% {
-    background-color: #c4bebe;
-    right: 40px;
+    background-color: blue;
+    left: 0;
+  }
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: blue;
   }
 }

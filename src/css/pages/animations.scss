@@ -2,7 +2,17 @@
 @use "../abstracts/mixins";
 
 .animation-box {
-  max-width: 800px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background-color: yellow;
+  animation-name: changeBackgroundColor;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin-top: 50px;
+  padding: 1rem;
+  margin-bottom: 50px;
 }
 
 .animation-flex {
@@ -15,26 +25,26 @@
 }
 .animation1 {
   @include mixins.animationBox();
-  width: 50px;
-  height: 50px;
-}
-
-.animation2 {
-  @include mixins.animationBox();
   width: 30px;
   height: 30px;
 }
 
+.animation2 {
+  @include mixins.animationBox();
+  width: 15px;
+  height: 15px;
+}
+
 .animation3 {
   @include mixins.animationBox();
-  width: 60px;
-  height: 20px;
+  width: 40px;
+  height: 10px;
 }
 
 .animation4 {
   @include mixins.animationBox();
-  width: 100px;
-  height: 130px;
+  width: 70px;
+  height: 100px;
 }
 
 .animation5 {
@@ -47,8 +57,8 @@
 
 .animation7 {
   @include mixins.animationBox();
-  width: 20px;
-  height: 80px;
+  width: 10px;
+  height: 50px;
 }
 
 .animation8 {
@@ -58,9 +68,15 @@
 .animation9 {
   @include mixins.animationBox();
   width: 40px;
-  height: 20px;
+  height: 10px;
 }
 
 .animation10 {
   @extend.animation9;
+}
+
+@media all and (max-width: 600px) {
+  .animation-box {
+    width: 90%;
+  }
 }

@@ -198,18 +198,36 @@ h1 {
 
 @keyframes colorTransition {
   0% {
-    background-color: #181818;
+    background-color: #00f;
     left: 0;
   }
 
+  25% {
+    left: 10px;
+  }
+
   50% {
-    background-color: #5a5959;
-    left: 40px;
+    background-color: #ff0;
+    left: 20px;
+  }
+
+  75% {
+    left: 10px;
   }
 
   100% {
-    background-color: #c4bebe;
-    right: 40px;
+    background-color: #00f;
+    left: 0;
+  }
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: #ff0;
+  }
+
+  100% {
+    background-color: #00f;
   }
 }
 
@@ -307,7 +325,15 @@ h1 {
 }
 
 .animation-box {
-  max-width: 800px;
+  background-color: #ff0;
+  border: 1px solid #000;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 1rem;
+  animation-name: changeBackgroundColor;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .animation-flex {
@@ -321,11 +347,12 @@ h1 {
 
 .animation1 {
   background-color: #181818;
-  width: 50px;
-  height: 50px;
-  margin: 100px auto 0;
+  width: 30px;
+  height: 30px;
+  margin: 50px auto 0;
   animation-name: colorTransition;
   animation-duration: 6s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative;
@@ -333,11 +360,12 @@ h1 {
 
 .animation2, .animation6 {
   background-color: #181818;
-  width: 30px;
-  height: 30px;
-  margin: 100px auto 0;
+  width: 15px;
+  height: 15px;
+  margin: 50px auto 0;
   animation-name: colorTransition;
   animation-duration: 6s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative;
@@ -345,11 +373,12 @@ h1 {
 
 .animation3, .animation5 {
   background-color: #181818;
-  width: 60px;
-  height: 20px;
-  margin: 100px auto 0;
+  width: 40px;
+  height: 10px;
+  margin: 50px auto 0;
   animation-name: colorTransition;
   animation-duration: 6s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative;
@@ -357,11 +386,12 @@ h1 {
 
 .animation4 {
   background-color: #181818;
-  width: 100px;
-  height: 130px;
-  margin: 100px auto 0;
+  width: 70px;
+  height: 100px;
+  margin: 50px auto 0;
   animation-name: colorTransition;
   animation-duration: 6s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative;
@@ -369,11 +399,12 @@ h1 {
 
 .animation7, .animation8 {
   background-color: #181818;
-  width: 20px;
-  height: 80px;
-  margin: 100px auto 0;
+  width: 10px;
+  height: 50px;
+  margin: 50px auto 0;
   animation-name: colorTransition;
   animation-duration: 6s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative;
@@ -382,13 +413,20 @@ h1 {
 .animation9, .animation10 {
   background-color: #181818;
   width: 40px;
-  height: 20px;
-  margin: 100px auto 0;
+  height: 10px;
+  margin: 50px auto 0;
   animation-name: colorTransition;
   animation-duration: 6s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative;
+}
+
+@media (width <= 600px) {
+  .animation-box {
+    width: 90%;
+  }
 }
 
 button {
