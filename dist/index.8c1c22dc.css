@@ -196,6 +196,23 @@ h1 {
   font-size: 2rem;
 }
 
+@keyframes colorTransition {
+  0% {
+    background-color: #181818;
+    left: 0;
+  }
+
+  50% {
+    background-color: #5a5959;
+    left: 40px;
+  }
+
+  100% {
+    background-color: #c4bebe;
+    right: 40px;
+  }
+}
+
 .flex-container {
   flex-direction: column;
   justify-content: center;
@@ -287,6 +304,91 @@ h1 {
   .sass-section, .sass-section-two {
     width: 90%;
   }
+}
+
+.animation-box {
+  max-width: 800px;
+}
+
+.animation-flex {
+  display: flex;
+}
+
+.ani-width {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.animation1 {
+  background-color: #181818;
+  width: 50px;
+  height: 50px;
+  margin: 100px auto 0;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+}
+
+.animation2, .animation6 {
+  background-color: #181818;
+  width: 30px;
+  height: 30px;
+  margin: 100px auto 0;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+}
+
+.animation3, .animation5 {
+  background-color: #181818;
+  width: 60px;
+  height: 20px;
+  margin: 100px auto 0;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+}
+
+.animation4 {
+  background-color: #181818;
+  width: 100px;
+  height: 130px;
+  margin: 100px auto 0;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+}
+
+.animation7, .animation8 {
+  background-color: #181818;
+  width: 20px;
+  height: 80px;
+  margin: 100px auto 0;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+}
+
+.animation9, .animation10 {
+  background-color: #181818;
+  width: 40px;
+  height: 20px;
+  margin: 100px auto 0;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
 }
 
 button {

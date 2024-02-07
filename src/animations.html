@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hem</title>
+    <title>Animationer</title>
     <link rel="stylesheet" href="css/main.scss" />
     <script src="js/main.js" type="module"></script>
     <link
@@ -45,51 +45,28 @@
       </nav>
     </header>
     <main>
-      <div class="flex-container">
-        <section class="sec">
-          <h1>Moment 3</h1>
-          <p>
-            Denna uppgift är en förlängning av tidigare moment. Jag har tidigare
-            använt mig av Gulp men använder till denna uppgift Parcel. Jag
-            använder även för första gången Sass istället för vanlig CSS.
-            <br />
-            Jag har gjort det möjligt att anpassa sidan efter dark/light mode.
-            Detta går att kontrollera med knappen nedanför bilden. Då ändras
-            hela utseendet för sidan. Om du har dark mode på din dator kommer
-            sidan initialt visas med mörkare tema, och vice versa. Om du trycker
-            på knappen så kommer sidan visas som om du hade det motsatta
-            inställt.
-          </p>
-        </section>
-      </div>
-      <div class="flex-container">
-        <picture class="hiddenOne" id="hiddenOne">
-          <source
-            srcset="./images/sun.jpg?as=webp"
-            type="image/webp"
-            class="source-image"
-          />
-          <img src="./images/sun.jpg" alt="Soluppgång" class="image" />
-        </picture>
-        <picture class="hiddenTwo" id="hiddenTwo">
-          <source
-            srcset="./images/full-moon.jpg?as=webp"
-            type="image/webp"
-            class="source-image"
-          />
-          <img src="./images/full-moon.jpg" alt="Soluppgång" class="image" />
-        </picture>
-        <button id="buttonMoon">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <button id="buttonSun">
-          <i class="fa-regular fa-sun"></i>
-        </button>
+      <div class="animation-box">
+        <div class="animation1"></div>
+        <div class="animation-flex">
+          <div class="animation2"></div>
+          <div class="animation3"></div>
+          <div class="animation4"></div>
+          <div class="animation5"></div>
+          <div class="animation6"></div>
+        </div>
+        <div class="animation-flex ani-width">
+          <div class="animation7"></div>
+          <div class="animation8"></div>
+        </div>
+        <div class="animation-flex">
+          <div class="animation9"></div>
+          <div class="animation10"></div>
+        </div>
       </div>
     </main>
-    <footer>
+    <!-- <footer>
       <p>Kurs: Frontend-baserad webbutveckling</p>
       <p>&copy;Andreas Nygård, 2024</p>
-    </footer>
+    </footer> -->
   </body>
 </html>

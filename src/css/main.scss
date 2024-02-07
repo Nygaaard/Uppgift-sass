@@ -6,9 +6,11 @@
 @use "./abstracts/variables.scss";
 @use "./abstracts/typography.scss";
 @use "./abstracts/mixins";
+@use "./abstracts/keyframes";
 
 @use "./pages/index.scss";
 @use "./pages/sass.scss";
+@use "./pages/animations.scss";
 
 @use "./components/buttons.scss";
 @use "./components/images.scss";

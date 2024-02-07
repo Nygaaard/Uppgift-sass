@@ -20,3 +20,14 @@
   margin-top: $top;
   margin-bottom: $bottom;
 }
+
+@mixin animationBox {
+  position: relative;
+  background-color: #181818;
+  margin: 0 auto;
+  margin-top: 100px;
+  animation-name: colorTransition;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

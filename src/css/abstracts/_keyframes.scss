@@ -1,0 +1,14 @@
+@keyframes colorTransition {
+  0% {
+    background-color: #181818;
+    left: 0;
+  }
+  50% {
+    background-color: #5a5959;
+    left: 40px;
+  }
+  100% {
+    background-color: #c4bebe;
+    right: 40px;
+  }
+}
