@@ -2,15 +2,39 @@ let buttonMoonEl = document.getElementById("buttonMoon");
 let buttonSunEl = document.getElementById("buttonSun");
 let hiddenOneEl = document.getElementById("hiddenOne");
 let hiddenTwoEl = document.getElementById("hiddenTwo");
-let sortDirection = true;
+const rootElement = document.documentElement;
 let isDarkMode = false;
+let isDarkScheme;
 
 hiddenTwoEl.style.display = "none";
 buttonSunEl.style.display = "none";
 
-buttonMoonEl.addEventListener("click", function () {
-  sortDirection = !sortDirection;
+window.onload = init;
 
+function init() {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    isDarkScheme = true;
+    isDarkMode = true;
+    hiddenTwoEl.style.display = "block";
+    hiddenOneEl.style.display = "none";
+    buttonSunEl.style.display = "block";
+    buttonMoonEl.style.display = "none";
+    rootElement.classList.remove("light-mode");
+  } else {
+    isDarkScheme = false;
+    isDarkMode = false;
+    hiddenOneEl.style.display = "block";
+    hiddenTwoEl.style.display = "none";
+    buttonSunEl.style.display = "none";
+    buttonMoonEl.style.display = "block";
+    rootElement.classList.add("light-mode");
+  }
+}
+
+buttonMoonEl.addEventListener("click", function () {
   hiddenOneEl.style.display = "block";
   hiddenTwoEl.style.display = "none";
   buttonSunEl.style.display = "none";
@@ -25,7 +49,6 @@ buttonMoonEl.addEventListener("click", function () {
 });
 
 buttonSunEl.addEventListener("click", function () {
-  sortDirection = !sortDirection;
   hiddenOneEl.style.display = "none";
   hiddenTwoEl.style.display = "block";
   buttonSunEl.style.display = "block";
@@ -40,12 +63,22 @@ buttonSunEl.addEventListener("click", function () {
 
 function toggleColorMode() {
   const rootElement = document.documentElement;
-
-  if (isDarkMode) {
-    rootElement.classList.remove("dark-mode");
-  } else {
-    rootElement.classList.add("dark-mode");
-  }
-
   isDarkMode = !isDarkMode;
+  if (isDarkScheme) {
+    if (isDarkMode) {
+      rootElement.classList.remove("light-mode");
+      rootElement.classList.add("dark-mode");
+    } else {
+      rootElement.classList.add("light-mode");
+      rootElement.classList.remove("dark-mode");
+    }
+  } else {
+    if (isDarkMode) {
+      rootElement.classList.add("dark-mode");
+      rootElement.classList.remove("light-mode");
+    } else {
+      rootElement.classList.remove("dark-mode");
+      rootElement.classList.add("light-mode");
+    }
+  }
 }

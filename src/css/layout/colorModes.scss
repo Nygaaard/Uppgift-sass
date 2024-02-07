@@ -1,23 +1,5 @@
 @use "../abstracts/variables.scss";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    header {
-      background-color: variables.$main-black;
-    }
-    body {
-      background-color: variables.$main-blue;
-    }
-    .sec h1,
-    p {
-      color: #fff;
-    }
-    footer {
-      background-color: variables.$main-grey;
-    }
-  }
-}
-
 .dark-mode {
   header {
     background-color: variables.$main-black;
@@ -27,12 +9,41 @@
   }
   .sec h1,
   p {
-    color: #fff;
+    color: variables.$main-white;
   }
   footer {
-    background-color: variables.$light-black;
+    background-color: variables.$main-grey;
   }
-  .image {
-    border: 5px solid #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  header {
+    background-color: variables.$main-black;
+  }
+  body {
+    background-color: variables.$main-blue;
+  }
+  .sec h1,
+  p {
+    color: variables.$main-white;
+  }
+  footer {
+    background-color: variables.$main-grey;
+  }
+}
+
+.light-mode {
+  header {
+    background-color: variables.$main-blue;
+  }
+  body {
+    background-color: variables.$dark-white;
+  }
+  .sec h1,
+  p {
+    color: #000;
+  }
+  footer {
+    background-color: variables.$light-blue;
   }
 }

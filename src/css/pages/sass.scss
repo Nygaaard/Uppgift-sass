@@ -1,0 +1,16 @@
+@use "../abstracts/variables.scss";
+@use "../abstracts/mixins";
+
+.sass-section {
+  border: 1px solid #000;
+  width: 70%;
+}
+.sass-section h1,
+.sass-section-two h2 {
+  text-align: center;
+}
+.sass-section-two {
+  @extend .sass-section;
+
+  background-color: variables.$dark-white;
+}
