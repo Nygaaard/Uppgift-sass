@@ -22,6 +22,11 @@
   margin-bottom: $bottom;
 }
 
+@mixin widthAndHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
 @mixin animationBox {
   position: relative;
   background-color: #181818;
