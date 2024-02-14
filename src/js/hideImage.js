@@ -1,6 +1,6 @@
 if (
   window.location.pathname === "/index.html" ||
-  window.location.pathname === ""
+  window.location.pathname === "/"
 ) {
   let buttonMoonEl = document.getElementById("buttonMoon");
   let buttonSunEl = document.getElementById("buttonSun");
