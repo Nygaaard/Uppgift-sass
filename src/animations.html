@@ -45,49 +45,61 @@
       </nav>
     </header>
     <main>
-      <section class="ani-text">
-        <h1>Moving Man</h1>
-        <p>
-          Detta var den första idén jag kom att tänka på. Den är uppbyggd av en
-          massa divs. CSS-koden består nästan uteslutande av mixins och extends.
-          Animeringen har jag gjort med två keyframes. En som får objektet att
-          röra sig och en som får bakgrunden att byta färg.
-        </p>
-      </section>
-      <div class="animation-box">
-        <div class="animation1"></div>
-        <div class="animation-flex">
-          <div class="animation2"></div>
-          <div class="animation3"></div>
-          <div class="animation4"></div>
-          <div class="animation5"></div>
-          <div class="animation6"></div>
-        </div>
-        <div class="animation-flex ani-width">
-          <div class="animation7"></div>
-          <div class="animation8"></div>
-        </div>
-        <div class="animation-flex">
-          <div class="animation9"></div>
-          <div class="animation10"></div>
-        </div>
-      </div>
-      <section class="ani-text">
-        <h2></h2>
-        <p></p>
-        <section>
-          <input type="submit" value="Tryck!" class="btn" id="button" />
-          <div id="hidden">
-            <h2>Hej!</h2>
-            <p class="text-color" id="textColor">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              mollitia, ut corporis dolores magnam itaque exercitationem
-              repellendus adipisci dolor reiciendis architecto quam eum
-              inventore, commodi sunt, aliquam debitis. Laborum, repudiandae?
-            </p>
-          </div>
+      <div class="animation-wrapper">
+        <section class="ani-text">
+          <h1>Moving Man</h1>
+          <p>
+            Detta var den första idén jag kom att tänka på. Den är uppbyggd av
+            en massa divs. CSS-koden består nästan uteslutande av mixins och
+            extends. Animeringen har jag gjort med två keyframes. En som får
+            objektet att röra sig och en som får bakgrunden att byta färg.
+          </p>
         </section>
-      </section>
+        <div class="animation-box">
+          <div class="animation1"></div>
+          <div class="animation-flex">
+            <div class="animation2"></div>
+            <div class="animation3"></div>
+            <div class="animation4"></div>
+            <div class="animation5"></div>
+            <div class="animation6"></div>
+          </div>
+          <div class="animation-flex ani-width">
+            <div class="animation7"></div>
+            <div class="animation8"></div>
+          </div>
+          <div class="animation-flex">
+            <div class="animation9"></div>
+            <div class="animation10"></div>
+          </div>
+        </div>
+        <section class="ani-text">
+          <h2></h2>
+          <p></p>
+          <section>
+            <input type="submit" value="Tryck!" class="btn" id="button" />
+            <div id="hidden">
+              <h2>Disco!</h2>
+              <p class="text-color" id="textColor">
+                Knappen ovan är har en bakgrund med linear-gradient. Färgen
+                animeras med en keyframe. Hovrar du över knappen kommer den
+                snabbt förstoras med "scale" och sedan rotera med "rotate".
+                <br />
+                Denna ruta förstoras om du för musen över den. Texten kommer
+                glittra om du hovrar med musen över den också. Discokulan är
+                hämtad från Pixabay och kommer rotera om du klickar på den. Där
+                har jag använt "rotateY". Sidan blev enligt mig inte så
+                estetiskt tilltalande men jag hoppas jag har fått med alla
+                önskade delar.
+              </p>
+              <picture class="disco-container">
+                <source srcset="./images/disco.png?as=webp" />
+                <img src="./images/disco.png" alt="Discokula" id="disco" />
+              </picture>
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
     <footer>
       <p>Kurs: Frontend-baserad webbutveckling</p>

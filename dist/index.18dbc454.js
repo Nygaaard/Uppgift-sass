@@ -583,8 +583,9 @@ var _header = require("./header");
 var _hideImage = require("./hideImage");
 var _button = require("./button");
 var _animatedText = require("./animatedText");
+var _disco = require("./disco");
 
-},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW"}],"bvS82":[function(require,module,exports) {
+},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy"}],"bvS82":[function(require,module,exports) {
 let hamburgerEl = document.getElementById("hamburger");
 let closeEl = document.getElementById("close");
 let navMobileEl = document.getElementById("nav-mobile");
@@ -688,6 +689,14 @@ if (window.location.pathname === "/animations.html") {
     });
     textColorEl.addEventListener("mouseleave", function() {
         textColorEl.classList.remove("hover-color");
+    });
+}
+
+},{}],"eN2hy":[function(require,module,exports) {
+if (window.location.pathname.includes("animations")) {
+    let discoEl = document.getElementById("disco");
+    discoEl.addEventListener("click", function() {
+        discoEl.style.animation = "rotateDisco 1s linear infinite alternate";
     });
 }
 

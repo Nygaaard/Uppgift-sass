@@ -113,13 +113,14 @@
 }
 
 #hidden {
-  margin-top: 2rem;
+  margin-top: 3rem;
   border: 5px solid #000;
   padding: 1rem;
   background-color: beige;
   min-height: 100px;
   h2 {
     text-align: center;
+    margin-bottom: 0.7rem;
   }
 }
 #hidden:hover {
@@ -135,6 +136,26 @@
 }
 .hover-color {
   color: red;
+}
+.disco-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#disco {
+  width: 200px;
+  height: 200px;
+  margin-top: 2.4rem;
+}
+#disco:hover {
+  cursor: pointer;
+}
+
+.animation-wrapper {
+  border: 10px solid variables.$main-blue;
+  width: 80%;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 @media all and (max-width: 800px) {

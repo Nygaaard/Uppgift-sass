@@ -288,6 +288,16 @@ h1 {
   }
 }
 
+@keyframes rotateDisco {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
 .flex-container {
   flex-direction: column;
   justify-content: center;
@@ -528,12 +538,13 @@ h1 {
   background-color: beige;
   border: 5px solid #000;
   min-height: 100px;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 1rem;
 }
 
 #hidden h2 {
   text-align: center;
+  margin-bottom: .7rem;
 }
 
 #hidden:hover {
@@ -551,6 +562,29 @@ h1 {
 
 .hover-color {
   color: red;
+}
+
+.disco-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#disco {
+  width: 200px;
+  height: 200px;
+  margin-top: 2.4rem;
+}
+
+#disco:hover {
+  cursor: pointer;
+}
+
+.animation-wrapper {
+  z-index: 2;
+  border: 10px solid #184357;
+  width: 80%;
+  margin: 0 auto;
 }
 
 @media (width <= 800px) {
