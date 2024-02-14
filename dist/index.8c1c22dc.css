@@ -231,6 +231,63 @@ h1 {
   }
 }
 
+@keyframes linearGradient {
+  50% {
+    --color1: blue;
+    --color2: yellow;
+  }
+
+  75% {
+    background: linear-gradient(40deg, var(--color1), var(--color2));
+  }
+
+  100% {
+    background: linear-gradient(50deg, var(--color1), var(--color2));
+  }
+}
+
+@keyframes rotateEl {
+  from {
+    transform: rotate(4deg);
+  }
+
+  to {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes scaleEl {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes glitterText {
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: #00f;
+  }
+
+  50% {
+    color: green;
+  }
+
+  75% {
+    color: #ff0;
+  }
+
+  100% {
+    color: purple;
+  }
+}
+
 .flex-container {
   flex-direction: column;
   justify-content: center;
@@ -322,6 +379,18 @@ h1 {
   .sass-section, .sass-section-two {
     width: 90%;
   }
+}
+
+@property --color1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff0;
+}
+
+@property --color2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #00f;
 }
 
 .animation-box {
@@ -423,8 +492,75 @@ h1 {
   position: relative;
 }
 
+.ani-text {
+  width: 50%;
+  margin: 5% auto;
+  padding: .6rem;
+}
+
+.ani-text h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: linear-gradient(50deg, var(--color1), var(--color2));
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 1em auto 0;
+  padding: .6em 1.2em;
+  font-size: 1.5rem;
+  animation: 8s infinite alternate-reverse linearGradient;
+  display: block;
+}
+
+.btn:hover {
+  cursor: pointer;
+  animation: .3s linear infinite alternate rotateEl, .4s linear scaleEl;
+}
+
+.btn:active {
+  animation: 2s rotateEl;
+}
+
+#hidden {
+  background-color: beige;
+  border: 5px solid #000;
+  min-height: 100px;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+#hidden h2 {
+  text-align: center;
+}
+
+#hidden:hover {
+  animation: 2s forwards scaleEl;
+}
+
+.text-color {
+  transition: color .3s;
+}
+
+.text-color:hover {
+  cursor: pointer;
+  animation: 4s infinite glitterText;
+}
+
+.hover-color {
+  color: red;
+}
+
+@media (width <= 800px) {
+  .ani-text {
+    width: 70%;
+  }
+}
+
 @media (width <= 600px) {
-  .animation-box {
+  .animation-box, .ani-text {
     width: 90%;
   }
 }

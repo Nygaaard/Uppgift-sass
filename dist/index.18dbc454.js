@@ -581,8 +581,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"1SICI":[function(require,module,exports) {
 var _header = require("./header");
 var _hideImage = require("./hideImage");
+var _button = require("./button");
+var _animatedText = require("./animatedText");
 
-},{"./header":"bvS82","./hideImage":"eWnHc"}],"bvS82":[function(require,module,exports) {
+},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW"}],"bvS82":[function(require,module,exports) {
 let hamburgerEl = document.getElementById("hamburger");
 let closeEl = document.getElementById("close");
 let navMobileEl = document.getElementById("nav-mobile");
@@ -594,75 +596,99 @@ closeEl.addEventListener("click", function() {
 });
 
 },{}],"eWnHc":[function(require,module,exports) {
-let buttonMoonEl = document.getElementById("buttonMoon");
-let buttonSunEl = document.getElementById("buttonSun");
-let hiddenOneEl = document.getElementById("hiddenOne");
-let hiddenTwoEl = document.getElementById("hiddenTwo");
-const rootElement = document.documentElement;
-let isDarkMode = false;
-let isDarkScheme;
-hiddenTwoEl.style.display = "none";
-buttonSunEl.style.display = "none";
-window.onload = init;
-function init() {
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        isDarkScheme = true;
-        isDarkMode = true;
-        hiddenTwoEl.style.display = "block";
-        hiddenOneEl.style.display = "none";
-        buttonSunEl.style.display = "block";
-        buttonMoonEl.style.display = "none";
-        rootElement.classList.remove("light-mode");
-    } else {
-        isDarkScheme = false;
-        isDarkMode = false;
+if (window.location.pathname === "/index.html") {
+    let buttonMoonEl = document.getElementById("buttonMoon");
+    let buttonSunEl = document.getElementById("buttonSun");
+    let hiddenOneEl = document.getElementById("hiddenOne");
+    let hiddenTwoEl = document.getElementById("hiddenTwo");
+    const rootElement = document.documentElement;
+    let isDarkMode = false;
+    let isDarkScheme;
+    hiddenTwoEl.style.display = "none";
+    buttonSunEl.style.display = "none";
+    window.onload = init;
+    function init() {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            isDarkScheme = true;
+            isDarkMode = true;
+            hiddenTwoEl.style.display = "block";
+            hiddenOneEl.style.display = "none";
+            buttonSunEl.style.display = "block";
+            buttonMoonEl.style.display = "none";
+            rootElement.classList.remove("light-mode");
+        } else {
+            isDarkScheme = false;
+            isDarkMode = false;
+            hiddenOneEl.style.display = "block";
+            hiddenTwoEl.style.display = "none";
+            buttonSunEl.style.display = "none";
+            buttonMoonEl.style.display = "block";
+            rootElement.classList.add("light-mode");
+        }
+    }
+    buttonMoonEl.addEventListener("click", function() {
         hiddenOneEl.style.display = "block";
         hiddenTwoEl.style.display = "none";
         buttonSunEl.style.display = "none";
         buttonMoonEl.style.display = "block";
-        rootElement.classList.add("light-mode");
+        hiddenTwoEl.style.display = "block";
+        hiddenOneEl.style.display = "none";
+        buttonSunEl.style.display = "block";
+        buttonMoonEl.style.display = "none";
+        toggleColorMode();
+    });
+    buttonSunEl.addEventListener("click", function() {
+        hiddenOneEl.style.display = "none";
+        hiddenTwoEl.style.display = "block";
+        buttonSunEl.style.display = "block";
+        buttonMoonEl.style.display = "none";
+        hiddenTwoEl.style.display = "none";
+        hiddenOneEl.style.display = "block";
+        buttonSunEl.style.display = "none";
+        buttonMoonEl.style.display = "block";
+        toggleColorMode();
+    });
+    function toggleColorMode() {
+        const rootElement = document.documentElement;
+        isDarkMode = !isDarkMode;
+        if (isDarkScheme) {
+            if (isDarkMode) {
+                rootElement.classList.remove("light-mode");
+                rootElement.classList.add("dark-mode");
+            } else {
+                rootElement.classList.add("light-mode");
+                rootElement.classList.remove("dark-mode");
+            }
+        } else if (isDarkMode) {
+            rootElement.classList.add("dark-mode");
+            rootElement.classList.remove("light-mode");
+        } else {
+            rootElement.classList.remove("dark-mode");
+            rootElement.classList.add("light-mode");
+        }
     }
 }
-buttonMoonEl.addEventListener("click", function() {
-    hiddenOneEl.style.display = "block";
-    hiddenTwoEl.style.display = "none";
-    buttonSunEl.style.display = "none";
-    buttonMoonEl.style.display = "block";
-    hiddenTwoEl.style.display = "block";
-    hiddenOneEl.style.display = "none";
-    buttonSunEl.style.display = "block";
-    buttonMoonEl.style.display = "none";
-    toggleColorMode();
-});
-buttonSunEl.addEventListener("click", function() {
-    hiddenOneEl.style.display = "none";
-    hiddenTwoEl.style.display = "block";
-    buttonSunEl.style.display = "block";
-    buttonMoonEl.style.display = "none";
-    hiddenTwoEl.style.display = "none";
-    hiddenOneEl.style.display = "block";
-    buttonSunEl.style.display = "none";
-    buttonMoonEl.style.display = "block";
-    toggleColorMode();
-});
-function toggleColorMode() {
-    const rootElement = document.documentElement;
-    isDarkMode = !isDarkMode;
-    if (isDarkScheme) {
-        if (isDarkMode) {
-            rootElement.classList.remove("light-mode");
-            rootElement.classList.add("dark-mode");
-        } else {
-            rootElement.classList.add("light-mode");
-            rootElement.classList.remove("dark-mode");
-        }
-    } else if (isDarkMode) {
-        rootElement.classList.add("dark-mode");
-        rootElement.classList.remove("light-mode");
-    } else {
-        rootElement.classList.remove("dark-mode");
-        rootElement.classList.add("light-mode");
-    }
+
+},{}],"ktwnG":[function(require,module,exports) {
+if (window.location.pathname === "/animations.html") {
+    let buttonEl = document.getElementById("button");
+    let hiddenEl = document.getElementById("hidden");
+    hiddenEl.style.display = "none";
+    buttonEl.addEventListener("click", function() {
+        if (hiddenEl.style.display === "none") hiddenEl.style.display = "block";
+        else hiddenEl.style.display = "none";
+    });
+}
+
+},{}],"3BpCW":[function(require,module,exports) {
+if (window.location.pathname === "/animations.html") {
+    let textColorEl = document.getElementById("textColor");
+    textColorEl.addEventListener("mouseenter", function() {
+        textColorEl.classList.add("hover-color");
+    });
+    textColorEl.addEventListener("mouseleave", function() {
+        textColorEl.classList.remove("hover-color");
+    });
 }
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequired2ca")

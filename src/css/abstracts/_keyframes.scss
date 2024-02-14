@@ -27,3 +27,55 @@
     background-color: blue;
   }
 }
+
+@keyframes linearGradient {
+  25% {
+    background: linear-gradient(30deg, var(--color1), var(color2));
+  }
+  50% {
+    --color1: blue;
+    --color2: yellow;
+  }
+  75% {
+    background: linear-gradient(40deg, var(--color1), var(--color2));
+  }
+  100% {
+    background: linear-gradient(50deg, var(--color1), var(--color2));
+  }
+}
+
+@keyframes rotateEl {
+  from {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes scaleEl {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.2, 1.2);
+  }
+}
+
+@keyframes glitterText {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: yellow;
+  }
+  100% {
+    color: purple;
+  }
+}
