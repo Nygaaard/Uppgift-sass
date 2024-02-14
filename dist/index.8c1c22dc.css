@@ -594,8 +594,12 @@ h1 {
 }
 
 @media (width <= 600px) {
-  .animation-box, .ani-text, #hidden {
+  .animation-box, .ani-text {
     width: 90%;
+  }
+
+  #hidden {
+    width: 100%;
   }
 }
 
