@@ -1,4 +1,4 @@
-if (window.location.pathname === "/animations.html") {
+if (window.location.pathname.includes("animations")) {
   let buttonEl = document.getElementById("button");
   let hiddenEl = document.getElementById("hidden");
   hiddenEl.style.display = "none";

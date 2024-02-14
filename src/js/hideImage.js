@@ -1,4 +1,7 @@
-if (window.location.pathname === "/index.html") {
+if (
+  window.location.pathname === "/index.html" ||
+  window.location.pathname === ""
+) {
   let buttonMoonEl = document.getElementById("buttonMoon");
   let buttonSunEl = document.getElementById("buttonSun");
   let hiddenOneEl = document.getElementById("hiddenOne");
