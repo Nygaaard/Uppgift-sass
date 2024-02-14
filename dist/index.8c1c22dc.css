@@ -597,6 +597,10 @@ h1 {
   .animation-box, .ani-text {
     width: 90%;
   }
+
+  .hidden {
+    width: 95%;
+  }
 }
 
 button {
