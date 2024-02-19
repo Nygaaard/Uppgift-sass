@@ -603,6 +603,11 @@ h1 {
   }
 }
 
+.myChart {
+  width: 50%;
+  height: auto;
+}
+
 button {
   background-color: #798b97;
   border-radius: 5px;

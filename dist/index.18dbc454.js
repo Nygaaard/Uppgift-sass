@@ -585,8 +585,9 @@ var _button = require("./button");
 var _animatedText = require("./animatedText");
 var _disco = require("./disco");
 var _barChart = require("./barChart");
+var _circleChart = require("./circleChart");
 
-},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy","./barChart":"cEeyi"}],"bvS82":[function(require,module,exports) {
+},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy","./barChart":"cEeyi","./circleChart":"kdk7o"}],"bvS82":[function(require,module,exports) {
 let hamburgerEl = document.getElementById("hamburger");
 let closeEl = document.getElementById("close");
 let navMobileEl = document.getElementById("nav-mobile");
@@ -750,6 +751,45 @@ if (window.location.pathname.includes("diagram")) {
         });
     }
     displayCourses();
+}
+
+},{}],"kdk7o":[function(require,module,exports) {
+if (window.location.pathname.includes("diagram")) {
+    const ctx = document.getElementById("circleChart");
+    new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: [
+                "Red",
+                "Blue",
+                "Yellow",
+                "Green",
+                "Purple",
+                "Orange"
+            ],
+            datasets: [
+                {
+                    label: "# of Votes",
+                    data: [
+                        12,
+                        19,
+                        3,
+                        5,
+                        2,
+                        3
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 }
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequired2ca")
