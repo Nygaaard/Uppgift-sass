@@ -5,3 +5,4 @@ import "./animatedText";
 import "./disco";
 import "./barChart";
 import "./circleChart";
+import "./map";

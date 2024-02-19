@@ -586,8 +586,9 @@ var _animatedText = require("./animatedText");
 var _disco = require("./disco");
 var _barChart = require("./barChart");
 var _circleChart = require("./circleChart");
+var _map = require("./map");
 
-},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy","./barChart":"cEeyi","./circleChart":"kdk7o"}],"bvS82":[function(require,module,exports) {
+},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy","./barChart":"cEeyi","./circleChart":"kdk7o","./map":"kvSuP"}],"bvS82":[function(require,module,exports) {
 let hamburgerEl = document.getElementById("hamburger");
 let closeEl = document.getElementById("close");
 let navMobileEl = document.getElementById("nav-mobile");
@@ -797,6 +798,8 @@ if (window.location.pathname.includes("diagram")) {
     }
     displayPrograms();
 }
+
+},{}],"kvSuP":[function(require,module,exports) {
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequired2ca")
 
