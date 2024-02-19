@@ -584,8 +584,9 @@ var _hideImage = require("./hideImage");
 var _button = require("./button");
 var _animatedText = require("./animatedText");
 var _disco = require("./disco");
+var _barChart = require("./barChart");
 
-},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy"}],"bvS82":[function(require,module,exports) {
+},{"./header":"bvS82","./hideImage":"eWnHc","./button":"ktwnG","./animatedText":"3BpCW","./disco":"eN2hy","./barChart":"cEeyi"}],"bvS82":[function(require,module,exports) {
 let hamburgerEl = document.getElementById("hamburger");
 let closeEl = document.getElementById("close");
 let navMobileEl = document.getElementById("nav-mobile");
@@ -698,6 +699,57 @@ if (window.location.pathname.includes("animations")) {
     discoEl.addEventListener("click", function() {
         discoEl.style.animation = "rotateDisco 1s linear infinite alternate";
     });
+}
+
+},{}],"cEeyi":[function(require,module,exports) {
+if (window.location.pathname.includes("diagram")) {
+    const url = "https://studenter.miun.se/~mallar/dt211g/";
+    const ctx = document.getElementById("myChart");
+    async function getData() {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data;
+        } catch  {
+            console.log(error);
+        }
+    }
+    async function getTopCourses() {
+        const data = await getData();
+        let sortedCourses = data.filter((course)=>course.type === "Kurs").sort((a, b)=>b.applicantsTotal - a.applicantsTotal);
+        let topCourses = sortedCourses.slice(0, 6);
+        return topCourses;
+    }
+    async function displayCourses() {
+        const topCourses = await getTopCourses();
+        const courseType = topCourses.map((course)=>course.type);
+        const courseNames = topCourses.map((course)=>course.name);
+        const numberOfApplicants = topCourses.map((course)=>course.applicantsTotal);
+        console.log(courseType);
+        console.log(courseNames);
+        console.log(numberOfApplicants);
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: courseNames,
+                datasets: [
+                    {
+                        label: "# of Votes",
+                        data: numberOfApplicants,
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+    displayCourses();
 }
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequired2ca")
