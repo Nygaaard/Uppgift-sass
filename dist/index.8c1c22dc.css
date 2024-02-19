@@ -603,9 +603,15 @@ h1 {
   }
 }
 
-.myChart {
-  width: 50%;
-  height: auto;
+.chart-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.chart-container {
+  margin-bottom: 80px;
 }
 
 button {

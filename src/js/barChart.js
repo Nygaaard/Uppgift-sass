@@ -31,10 +31,6 @@ if (window.location.pathname.includes("diagram")) {
       (course) => course.applicantsTotal
     );
 
-    console.log(courseType);
-    console.log(courseNames);
-    console.log(numberOfApplicants);
-
     new Chart(ctx, {
       type: "bar",
       data: {

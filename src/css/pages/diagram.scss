@@ -1,6 +1,11 @@
 @use "../abstracts/mixins";
 
-.myChart {
-  width: 50%;
-  height: auto;
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chart-container {
+  margin-bottom: 80px;
 }
