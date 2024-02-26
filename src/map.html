@@ -44,7 +44,31 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="search-container">
+        <label for="search">Sök plats</label>
+        <input type="search" id="search" />
+        <button id="button">Sök</button>
+      </div>
+      <div class="map-container" id="map-container">
+        <iframe
+          id="iFrame"
+          width="425"
+          height="350"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=84.232177734375%2C23.71495350699028%2C-77.16796875000001%2C27.103143960595734&amp;layer=mapnik&amp;marker=59.33406496515175%2C17.894668579101562"
+          style="border: 1px solid black"
+          class="map"
+        ></iframe>
+        <br />
+        <small
+          ><a
+            href="https://www.openstreetmap.org/?mlat=59.3341&amp;mlon=17.8947#map=11/59.3341/17.8947"
+            class="larger-map"
+            >Visa större karta</a
+          ></small
+        >
+      </div>
+    </main>
     <footer>
       <p>Kurs: Frontend-baserad webbutveckling</p>
       <p>&copy;Andreas Nygård, 2024</p>
