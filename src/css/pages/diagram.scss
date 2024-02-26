@@ -1,11 +1,35 @@
 @use "../abstracts/mixins";
 
-// .chart-wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
 .chart-container {
-  // margin: 200px;
+  width: 40%;
+  margin-bottom: 100px;
+}
+
+.chart-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hOne {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2.3rem;
+}
+.hTwo {
+  margin-bottom: 80px;
+}
+
+@media all and (max-width: 800px) {
+  .hOne {
+    font-size: 1.2rem;
+  }
+  .hTwo {
+    font-size: 1rem;
+  }
+  .chart-container {
+    width: 100%;
+  }
 }

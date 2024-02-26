@@ -704,56 +704,62 @@ if (window.location.pathname.includes("animations")) {
 }
 
 },{}],"cEeyi":[function(require,module,exports) {
-if (window.location.pathname.includes("diagram")) {
-    const url = "https://studenter.miun.se/~mallar/dt211g/";
-    const ctx = document.getElementById("myChart");
-    async function getData() {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            return data;
-        } catch  {
-            console.log(error);
+window.onload = function() {
+    if (window.location.pathname.includes("diagram")) {
+        const url = "https://studenter.miun.se/~mallar/dt211g/";
+        const ctx = document.getElementById("myChart");
+        async function getData() {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                return data;
+            } catch  {
+                console.log(error);
+            }
         }
-    }
-    async function getTopCourses() {
-        const data = await getData();
-        let sortedCourses = data.filter((course)=>course.type === "Kurs").sort((a, b)=>b.applicantsTotal - a.applicantsTotal);
-        let topCourses = sortedCourses.slice(0, 6);
-        return topCourses;
-    }
-    async function displayCourses() {
-        const topCourses = await getTopCourses();
-        const courseType = topCourses.map((course)=>course.type);
-        const courseNames = topCourses.map((course)=>course.name);
-        const numberOfApplicants = topCourses.map((course)=>course.applicantsTotal);
-        new Chart(ctx, {
-            type: "bar",
-            data: {
-                labels: courseNames,
-                datasets: [
-                    {
-                        label: "# of Votes",
-                        data: numberOfApplicants,
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        async function getTopCourses() {
+            const data = await getData();
+            let sortedCourses = data.filter((course)=>course.type === "Kurs").sort((a, b)=>b.applicantsTotal - a.applicantsTotal);
+            let topCourses = sortedCourses.slice(0, 6);
+            return topCourses;
+        }
+        async function displayCourses() {
+            const topCourses = await getTopCourses();
+            const courseNames = topCourses.map((course)=>course.name);
+            const numberOfApplicants = topCourses.map((course)=>course.applicantsTotal);
+            const totalNumberOfApplicants = numberOfApplicants.reduce((a, c)=>parseInt(a) + parseInt(c), 0);
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: courseNames,
+                    datasets: [
+                        {
+                            label: "Number of votes: " + totalNumberOfApplicants,
+                            data: numberOfApplicants,
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
+        displayCourses();
     }
-    displayCourses();
-}
+};
 
 },{}],"kdk7o":[function(require,module,exports) {
 if (window.location.pathname.includes("diagram")) {
     const ctx = document.getElementById("circleChart");
+    const totalEl = document.getElementById("total");
     const url = "https://studenter.miun.se/~mallar/dt211g/";
     async function getData() {
         try {
@@ -772,9 +778,10 @@ if (window.location.pathname.includes("diagram")) {
     }
     async function displayPrograms() {
         const topPrograms = await getTopPrograms();
-        const programType = topPrograms.map((program)=>program.type);
         const programNames = topPrograms.map((program)=>program.name);
         const numberOfApplicants = topPrograms.map((program)=>program.applicantsTotal);
+        const totalNumberOfApplicants = numberOfApplicants.reduce((a, c)=>parseInt(a) + parseInt(c), 0);
+        totalEl.innerHTML = `Number of votes: ${totalNumberOfApplicants}`;
         new Chart(ctx, {
             type: "doughnut",
             data: {
@@ -800,24 +807,26 @@ if (window.location.pathname.includes("diagram")) {
 }
 
 },{}],"kvSuP":[function(require,module,exports) {
-const searchEl = document.getElementById("search");
-const buttonEl = document.getElementById("button");
-const mapContainerEl = document.getElementById("map-container");
-buttonEl.addEventListener("click", function() {
-    getLocation(searchEl.value);
-});
-async function getLocation(searchValue) {
-    const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${searchValue}&format=json`);
-    const data = await response.json();
-    //Hämtar ut första resultatet i data-arrayen ifall flera resultat hittas
-    const markerCoords = {
-        lat: data[0].lat,
-        long: data[0].lon
-    };
-    printMap(data[0].boundingbox, markerCoords);
-}
-function printMap(boundingBox, marker) {
-    document.getElementById("iFrame").src = `https://www.openstreetmap.org/export/embed.html?bbox=${boundingBox[2]}%2C${boundingBox[0]}%2C${boundingBox[3]}%2C${boundingBox[1]}&amp;layer=mapnik&marker=${marker.lat},${marker.long}`;
+if (window.location.pathname.includes("map")) {
+    const searchEl = document.getElementById("search");
+    const buttonEl = document.getElementById("button");
+    buttonEl.addEventListener("click", function() {
+        getLocation(searchEl.value);
+    });
+    async function getLocation(searchValue) {
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${searchValue}&format=json`);
+        const data = await response.json();
+        //Hämtar ut första resultatet i data-arrayen ifall flera resultat hittas
+        const markerCoords = {
+            lat: data[0].lat,
+            long: data[0].lon
+        };
+        printMap(data[0].boundingbox, markerCoords, data[0].name);
+    }
+    function printMap(boundingBox, marker, locationName) {
+        document.getElementById("iFrame").src = `https://www.openstreetmap.org/export/embed.html?bbox=${boundingBox[2]}%2C${boundingBox[0]}%2C${boundingBox[3]}%2C${boundingBox[1]}&amp;layer=mapnik&marker=${marker.lat},${marker.long}`;
+        document.getElementById("big-map").href = `https://www.openstreetmap.org/search?query=${locationName}/${marker.lat}/${marker.long}`;
+    }
 }
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequired2ca")

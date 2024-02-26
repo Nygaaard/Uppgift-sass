@@ -45,11 +45,21 @@
       </nav>
     </header>
     <main>
-      <div class="chart-container">
-        <canvas id="myChart" class="myChart"></canvas>
-      </div>
-      <div class="chart-container">
-        <canvas id="circleChart"></canvas>
+      <h1 class="hOne">Ansökningsstatistik - MIUN 2023</h1>
+      <div class="chart-flex">
+        <h2 class="hTwo">
+          Statistik över de 6 mest sökta kurserna på Mittuniverstetet, HT23.
+        </h2>
+        <div class="chart-container">
+          <canvas id="myChart" class="myChart"></canvas>
+        </div>
+        <h2 class="hTwo">
+          Statistik över de 5 mest sökta programmen på Mittuniverstetet, HT23.
+        </h2>
+        <h3 id="total"></h3>
+        <div class="chart-container">
+          <canvas id="circleChart"></canvas>
+        </div>
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

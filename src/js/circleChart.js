@@ -1,5 +1,6 @@
 if (window.location.pathname.includes("diagram")) {
   const ctx = document.getElementById("circleChart");
+  const totalEl = document.getElementById("total");
 
   const url = "https://studenter.miun.se/~mallar/dt211g/";
 
@@ -28,11 +29,17 @@ if (window.location.pathname.includes("diagram")) {
   async function displayPrograms() {
     const topPrograms = await getTopPrograms();
 
-    const programType = topPrograms.map((program) => program.type);
     const programNames = topPrograms.map((program) => program.name);
     const numberOfApplicants = topPrograms.map(
       (program) => program.applicantsTotal
     );
+
+    const totalNumberOfApplicants = numberOfApplicants.reduce(
+      (a, c) => parseInt(a) + parseInt(c),
+      0
+    );
+
+    totalEl.innerHTML = `Number of votes: ${totalNumberOfApplicants}`;
 
     new Chart(ctx, {
       type: "doughnut",

@@ -603,6 +603,43 @@ h1 {
   }
 }
 
+.chart-container {
+  width: 40%;
+  margin-bottom: 100px;
+}
+
+.chart-flex {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.hOne {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2.3rem;
+}
+
+.hTwo {
+  margin-bottom: 80px;
+}
+
+@media (width <= 800px) {
+  .hOne {
+    font-size: 1.2rem;
+  }
+
+  .hTwo {
+    font-size: 1rem;
+  }
+
+  .chart-container {
+    width: 100%;
+  }
+}
+
 .map-container {
   flex-direction: column;
   justify-content: center;
@@ -630,6 +667,11 @@ h1 {
 #search {
   width: 40%;
   height: 30px;
+}
+
+.s-inp {
+  margin: .3rem;
+  font-size: 1.2rem;
 }
 
 @media (width <= 900px) {
